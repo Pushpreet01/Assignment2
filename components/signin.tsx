@@ -23,7 +23,7 @@ type signInProps = {
             }
 
             if (user){
-                alert(`Welcome ${username}`);
+                router.navigate("./app/index");
                 isLoginBoolean(true);
             }
             else {
@@ -43,16 +43,17 @@ type signInProps = {
             value={username}
             onChangeText={setUsername}
             />
+
             <TextInput
             style={styles.input}
             placeholder="Password"
             value={password}
             onChangeText={setPassword}
-            secureTextEntry
             />
-            <Pressable onPress={handleSignIn}>
-                <Text style={styles.button} >Sign in</Text>
-            </Pressable>
+
+            <TouchableOpacity  style={styles.button} onPress={handleSignIn}>
+                <Text>Sign in</Text>
+            </TouchableOpacity>
         </View>
 
 
@@ -72,9 +73,9 @@ type signInProps = {
             borderColor: "#575757",
             padding: 10,
             margin: 10,
+            marginTop: 100,
             width: "80%",
-            minWidth: 200,
-            maxWidth: 200,
+
             borderRadius: 2,
         },
         button:{
