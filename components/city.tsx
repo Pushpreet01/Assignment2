@@ -16,6 +16,7 @@ const City: React.FC<CityProps> = ({ city, imageUrl, link, info }) => {
       <TouchableOpacity onPress={() => Linking.openURL(link)}>
         <Text style={styles.linkText}>Go to City Page</Text>
       </TouchableOpacity>
+      <Text style={styles.infoText}>{info}</Text>
     </View>
   );
 };
@@ -40,6 +41,10 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: "blue",
     marginVertical: 10,
+  },
+  infoText: {
+    fontSize: 16,
+    textAlign: "center",
   },
 });
 
