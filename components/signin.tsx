@@ -23,7 +23,7 @@ type signInProps = {
             }
 
             if (user){
-                router.navigate("./app/index");
+                // alert(`Welcome ${username}`);
                 isLoginBoolean(true);
             }
             else {
@@ -43,17 +43,16 @@ type signInProps = {
             value={username}
             onChangeText={setUsername}
             />
-
             <TextInput
             style={styles.input}
             placeholder="Password"
             value={password}
             onChangeText={setPassword}
+            secureTextEntry
             />
-
-            <TouchableOpacity  style={styles.button} onPress={handleSignIn}>
-                <Text>Sign in</Text>
-            </TouchableOpacity>
+            <Pressable onPress={handleSignIn}>
+                <Text style={styles.button} >Sign in</Text>
+            </Pressable>
         </View>
 
 
@@ -63,7 +62,6 @@ type signInProps = {
 
     const styles = StyleSheet.create({
         container: {
-            flex: 1,
             backgroundColor: "#fff",
             alignItems: "center",
             justifyContent: "center",
@@ -73,9 +71,9 @@ type signInProps = {
             borderColor: "#575757",
             padding: 10,
             margin: 10,
-            marginTop: 100,
             width: "80%",
-
+            minWidth: 200,
+            maxWidth: 200,
             borderRadius: 2,
         },
         button:{
