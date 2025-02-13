@@ -19,7 +19,7 @@ export default function App() {
       <Stack.Screen
         name="Home"
         options={{
-          headerTintColor: currentCity === "Calgary" ? "white" : currentCity === "Edmonton" ? "#4169E1" : "white", headerTitleStyle: styles.headerTitle,
+          headerTintColor: currentCity === "Calgary" ? "white" : currentCity === "Edmonton" ? "white" : "white", headerTitleStyle: styles.headerTitle,
         }} 
       >
         {props => <HomeScreen {...props} setCurrentCity={setCurrentCity} />}
